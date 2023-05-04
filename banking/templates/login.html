@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<form action="login" method="post">
+    {% csrf_token %}
+    <h3>LOGIN</h3>
+    <div>
+    <input type="text" name="username" placeholder="Enter your user name"><br><br>
+    <input type="password" name="password" placeholder="Enter your password"><br><br>
+    </div>
+    <a href="{% url 'bank:new_page' %}">
+        <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+    </a>
+
+    <a href="{% url 'bank:user_registration' %}"> <p> Don't have an account? Register </p></a>
+</form>
+</body>
+</html>
